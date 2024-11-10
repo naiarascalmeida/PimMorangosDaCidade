@@ -93,5 +93,20 @@ namespace Aula04Out24.Controllers
         {
             return View();
         }
+
+        public ActionResult NossoTime()
+        {
+            return View();
+        }
+
+        public ActionResult NossoTime1()
+        {
+            return View();
+        }
+
+        public ActionResult NossoTime2()
+        {
+            return View();
+        }
     }
 }
