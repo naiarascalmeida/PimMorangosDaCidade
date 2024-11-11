@@ -11,6 +11,15 @@ input {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.text-danger {
+    color: red;
+    display: inline; /* Mantém as mensagens na mesma linha */
+    margin-left: 5px; /* Espaçamento opcional entre a mensagem e o campo */
+    font-size: 0.9em; /* Tamanho opcional para diferenciar do texto normal */
+    white-space: nowrap;
+}
+
+
 .container {
     position: relative;
     width: 100%;

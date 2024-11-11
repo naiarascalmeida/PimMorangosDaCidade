@@ -191,6 +191,17 @@
     <Content Include="IMG\Home\origem.jpg" />
     <Content Include="IMG\Home\Quitanda do Sabor.jpg" />
     <Content Include="IMG\Login\Morango - icon.png" />
+    <Content Include="IMG\NossoTime\01.png" />
+    <Content Include="IMG\NossoTime\bia.jpg" />
+    <Content Include="IMG\NossoTime\gi.jpg" />
+    <Content Include="IMG\NossoTime\mari.jpg" />
+    <Content Include="IMG\NossoTime\Morango - icon.png" />
+    <Content Include="IMG\NossoTime\nai.jpg" />
+    <Content Include="IMG\NossoTime\ni.jpg" />
+    <Content Include="IMG\NossoTime\Primeira.jpg" />
+    <Content Include="IMG\NossoTime\rafa.jpg" />
+    <Content Include="IMG\NossoTime\Segunda.jpg" />
+    <Content Include="IMG\NossoTime\Terceira.jpg" />
     <Content Include="IMG\Produtos\Morango - icon.png" />
     <Content Include="IMG\QuemSomos\Morango - icon.png" />
     <Content Include="IMG\Serviços\01.png" />
@@ -236,7 +247,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="IMG\NossoTime\" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\ModelCliente.edmx">

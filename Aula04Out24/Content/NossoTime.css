@@ -27,6 +27,18 @@ body {
     font-family: monospace;
 }
 
+.btn {
+    background-color: transparent !important;
+    border: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+    cursor: pointer; /* Adiciona o cursor de ponteiro ao passar o mouse */
+}
+
+    .btn:hover {
+        color: red !important; /* Cor vermelha ao passar o mouse */
+        transition: color 0.3s ease; /* Transição suave */
+    }
 
 /* Header */
 

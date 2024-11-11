@@ -16,16 +16,16 @@ namespace Aula04Out24.Controllers
 
         // Método para login e cadastro de novo cliente
         [HttpPost]
-        public ActionResult Login(string nomeCliente, string emailCliente, string dataDeNascimentoCliente, string cpfCliente, string telefoneCliente, string senhaCliente)
+        public ActionResult Login(Cliente cliente)
         {
             if (ModelState.IsValid)
             {
                 // Tentar encontrar um cliente existente pelo email
-                var clienteExistente = db.Cliente.FirstOrDefault(u => u.EmailCliente == emailCliente);
+                var clienteExistente = db.Cliente.FirstOrDefault(u => u.EmailCliente == cliente.EmailCliente);
 
                 if (clienteExistente != null) // Cliente já existe
                 {
-                    if (clienteExistente.SenhaCliente == senhaCliente) // Senha correta
+                    if (clienteExistente.SenhaCliente == cliente.SenhaCliente) // Senha correta
                     {
                         TempData["ToastrMessage"] = "Login realizado com sucesso!";
                         TempData["ToastrType"] = "success"; // Tipo da mensagem
@@ -43,12 +43,12 @@ namespace Aula04Out24.Controllers
                     // Cria um novo cliente
                     var novoCliente = new Cliente
                     {
-                        NomeCliente = nomeCliente,
-                        EmailCliente = emailCliente,
-                        DataDeNascimentoCliente = dataDeNascimentoCliente, // Certifique-se de que o formato é válido
-                        CPFCliente = cpfCliente,
-                        TelefoneCliente = telefoneCliente,
-                        SenhaCliente = senhaCliente
+                        NomeCliente = cliente.NomeCliente,
+                        EmailCliente = cliente.EmailCliente,
+                        DataDeNascimentoCliente = cliente.DataDeNascimentoCliente, // Certifique-se de que o formato é válido
+                        CPFCliente = cliente.CPFCliente,
+                        TelefoneCliente = cliente.TelefoneCliente,
+                        SenhaCliente = cliente.SenhaCliente
                     };
 
                     // Adiciona o novo cliente ao banco de dados
@@ -66,7 +66,7 @@ namespace Aula04Out24.Controllers
                 TempData["ToastrType"] = "error"; // Tipo de mensagem de erro
             }
 
-            return View(); // Retorna a view em caso de erro
+            return View(cliente); // Retorna a view em caso de erro
         }
 
         public ActionResult Login()
