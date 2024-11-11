@@ -54,46 +54,54 @@
                 {
                     <h2 class="title">Cadastre-se</h2>
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         @Html.TextBoxFor(model => model.NomeCliente, new { @class = "form-control", placeholder = "Nome", required = "required" })
                         @Html.ValidationMessageFor(model => model.NomeCliente, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
                         @Html.TextBoxFor(model => model.EmailCliente, new { @class = "form-control", placeholder = "E-mail", required = "required" })
                         @Html.ValidationMessageFor(model => model.EmailCliente, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="input-field">
                         <i class="fas fa-calendar"></i>
-                        @Html.TextBoxFor(model => model.DataDeNascimentoCliente, new { @class = "form-control", placeholder = "Data de nascimento (DD/MM/AAAA)", required = "required" })
+                        @Html.TextBoxFor(model => model.DataDeNascimentoCliente, new { @class = "form-control", placeholder = "Data de nascimento (DD-MM-AAAA)", required = "required", @type = "tel", oninput = "this.value = this.value.replace(/[^0-9]/g, '')" })
                         @Html.ValidationMessageFor(model => model.DataDeNascimentoCliente, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="input-field">
                         <i class="fas fa-id-card"></i>
-                        @Html.TextBoxFor(model => model.CPFCliente, new { @class = "form-control", placeholder = "CPF", required = "required" })
+                        @Html.TextBoxFor(model => model.CPFCliente, new { @class = "form-control", placeholder = "CPF", required = "required", @type = "tel", oninput = "this.value = this.value.replace(/[^0-9]/g, '')" })
                         @Html.ValidationMessageFor(model => model.CPFCliente, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="input-field">
                         <i class="fas fa-phone"></i>
-                        @Html.TextBoxFor(model => model.TelefoneCliente, new { @class = "form-control", placeholder = "Telefone", required = "required" })
+                        @Html.TextBoxFor(model => model.TelefoneCliente, new { @class = "form-control", placeholder = "Telefone", required = "required", @type = "tel", oninput = "this.value = this.value.replace(/[^0-9]/g, '')" })
                         @Html.ValidationMessageFor(model => model.TelefoneCliente, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         @Html.PasswordFor(model => model.SenhaCliente, new { @class = "form-control", placeholder = "Senha", required = "required" })
                         @Html.ValidationMessageFor(model => model.SenhaCliente, "", new { @class = "text-danger" })
                     </div>
+
                     <input type="submit" class="btn" value="Cadastre-se" />
                 }
             </div>
         </div>
 
+
         <div class="panels-container">
             <div class="panel left-panel">
                 <div class="content">
                     <h3>Novo aqui?</h3>
-                    <p>Cadastre-se com segurança e proteção de dados. Saiba mais clicando aqui!</p>
+                    <p>Cadastre-se com segurança e proteção de dados.</p>
                     <button class="btn transparent" id="sign-up-btn">Cadastre-se</button>
                 </div>
             </div>
